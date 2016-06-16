@@ -1,0 +1,22 @@
+RewriteEngine On
+RewriteBase /control-tower/
+
+# Zezwolenie na wyświetlanie plików,
+# które istniejących bezpośrednio
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Ochrona ukrytych plików przed wyświetleniem
+<Files .*>
+	Order Deny,Allow
+	Deny From All
+</Files>
+
+# <controller>.html
+RewriteRule ^([a-z0-9]+)\.html(\?|$) index.php?controller=$1 [NC,QSA,L]
+
+# <controller>/<action>.html
+RewriteRule ^([a-z0-9]+)\/([a-z0-9]+)\.html(\?|$) index.php?controller=$1&action=$2 [NC,QSA,L]
+
+# <controller>/<action>,<id>.html
+RewriteRule ^([a-z0-9]+)\/([a-z0-9]+)\,([0-9]+)\.html(\?|$) index.php?controller=$1&action=$2&id=$3 [NC,QSA,L]

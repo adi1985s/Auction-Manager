@@ -1,0 +1,68 @@
+<div class="container">
+	<div class="page-header">
+		<h1>Użytkownicy <small>Dodaj</small></h1>
+	</div>
+
+	<form method="post" role="form" class="form-horizontal">
+		<?php if($success): ?>
+		<p class="message bg-success text-success">Użytkownik został dodany poprawnie.</p>
+		<?php endif; ?>
+
+		<?php if($error): ?>
+		<p class="message bg-danger text-danger">
+			Wystąpił nieoczekiwany błąd i użytkownik nie został dodany.<br>
+			Jeśli komunikat będzie się powtarzał skontaktuj się z administratorem.
+		</p>
+		<?php endif; ?>
+
+		<?php if($warning): ?>
+		<p class="message bg-warning text-warning">
+			Popraw błędy i spróbuj wysłać formularz ponownie.
+		</p>
+		<?php endif; ?>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Nazwa użytkownika</label>
+			<div class="col-sm-4">
+				<input type="text" name="name" class="form-control" placeholder="np. Kowalski123" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Adres e-mail</label>
+			<div class="col-sm-4">
+				<input type="email" name="email" class="form-control" placeholder="np. kowalski@gmail.com" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Hasło</label>
+			<div class="col-sm-2">
+				<input type="password" name="password1" class="form-control" placeholder="Min 6 znaków" required>
+			</div>
+			<div class="col-sm-2">
+				<input type="password" name="password2" class="form-control" placeholder="Powtórz hasło" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Ilość pieniędzy</label>
+			<div class="col-sm-4">
+				<input type="number" name="cash" min="1000" value="1000000" class="form-control" placeholder="np. 1000000" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Domyślna nazwa firmy</label>
+			<div class="col-sm-4">
+				<input type="text" name="company" class="form-control" placeholder="np. SkyTravels (może być puse)">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-4 col-sm-offset-2">
+				<input type="submit" name="button" value="Dodaj użytkownika" class="btn btn-default">
+			</div>
+		</div>
+	</form>
+</div>

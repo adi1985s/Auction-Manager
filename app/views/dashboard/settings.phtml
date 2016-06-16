@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="page-header">
+		<h1>Dashboard <small><?php echo $title ?></small></h1>
+	</div>
+
+	<section>
+		<form method="post" class="form-horizontal">
+			<?php foreach($settings as $key => $field): ?>
+			<div class="form-group">
+				<label for="input_<?php echo $key ?>" class="col-sm-3 2control-label"><?php echo $field->description ?></label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" name="settings_fields[<?php echo $field->meta_id ?>]" id="input_<?php echo $key ?>" value="<?php echo $field->value ?>">
+					
+				</div>
+			</div>
+			<?php endforeach; ?>
+
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-5 text-right">
+					<button type="submit" class="btn btn-primary" name="settings_btn">Zapisz ustawienia</button>
+				</div>
+			</div>
+		</form>
+	</section>
+</div>

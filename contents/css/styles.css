@@ -1,0 +1,22 @@
+body {
+	background: #f0f0f0;
+}
+
+.container {
+	background: #fff;
+	border-radius: 4px;
+}
+
+.navbar {
+	border-radius: 0;
+	border-width: 0 0 1px 0;
+}
+
+.navbar > .container {
+	background: transparent;
+}
+
+.message {
+	padding: 20px;
+	border-radius: 4px;
+}

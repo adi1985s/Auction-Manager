@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="page-header">
+		<h1>Użytkownicy <small>Usuwanie</small></h1>
+	</div>
+
+	<?php if($success): ?>
+	<p class="message bg-success text-success">Użytkownik został usunięty poprawnie.</p>
+	<?php endif; ?>
+
+	<?php if($error): ?>
+	<p class="message bg-danger text-danger">
+		Wystąpił nieoczekiwany błąd i użytkownik nie został usunięty.<br>
+		Jeśli komunikat będzie się powtarzał skontaktuj się z administratorem.
+	</p>
+	<?php endif; ?>
+
+	<?php if($warning): ?>
+	<p class="message bg-warning text-warning">
+		Nie ma takiego użytkownika.
+	</p>
+	<?php endif; ?>
+</div>
+
+<script>
+setTimeout(function(){
+	window.location.href = document.referrer;
+}, 2000);
+</script>

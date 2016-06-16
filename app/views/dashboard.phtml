@@ -1,0 +1,110 @@
+<div class="container">
+	<div class="page-header">
+		<h1>Dashboard <small>Podsumowanie</small></h1>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Producenci <sup><span class="label label-default"><?php echo count($planes); ?></span></sup>
+					<div class="pull-right">
+						<a href="#" rel="action-manage">Zarządzaj</a>
+					</div>
+				</div>
+				<div class="panel-body">
+					<?php if(count($brands)): ?>
+					<ul>
+					<?php foreach($brands as $brand): ?>
+						<li>
+							<a href="#"><?php echo $brand->name; ?></a>
+							<div class="pull-right hidden">
+								<a href="#"><span class="glyphicon glyphicon-pencil text-muted"></span></a>
+								<a href="?controller=brand&amp;action=remove&amp;id=<?php echo $brand->id; ?>" title="Usuń"><span class="glyphicon glyphicon-trash text-muted"></span></a>
+							</div>
+						</li>
+					<?php endforeach; ?>
+					</ul>
+					<?php else: ?>
+					<div class="text-center">
+						Brak użytkowników
+					</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Samoloty <sup><span class="label label-default"><?php echo count($planes); ?></span></sup>
+					<div class="pull-right">
+						<a href="#" rel="action-manage">Zarządzaj</a>
+					</div>
+				</div>
+				<div class="panel-body">
+					<?php if(count($planes)): ?>
+					<ul>
+					<?php foreach($planes as $plane): ?>
+						<li>
+							<a href="#"><?php echo $plane->producer ?> <?php echo $plane->model ?></a>
+							<div class="pull-right hidden">
+								<a href="#"><span class="glyphicon glyphicon-pencil text-muted"></span></a>
+								<a href="?controller=plane&amp;action=remove&amp;id=<?php echo $plane->id; ?>" title="Usuń"><span class="glyphicon glyphicon-trash text-muted"></span></a>
+							</div>
+						</li>
+					<?php endforeach; ?>
+					</ul>
+					<?php else: ?>
+					<div class="text-center">
+						Brak użytkowników
+					</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Użytkownicy <sup><span class="label label-default"><?php echo count($users); ?></span></sup>
+					<div class="pull-right">
+						<a href="#" rel="action-manage">Zarządzaj</a>
+					</div>
+				</div>
+				<div class="panel-body">
+					<?php if(count($users)): ?>
+					<ul>
+					<?php foreach($users as $user): ?>
+						<li>
+							<a href="#"><?php echo $user->username ?></a>
+							<div class="pull-right hidden">
+								<a href="#"><span class="glyphicon glyphicon-pencil text-muted"></span></a>
+								<a href="?controller=user&amp;action=remove&amp;id=<?php echo $user->id; ?>" title="Usuń"><span class="glyphicon glyphicon-trash text-muted"></span></a>
+							</div>
+						</li>
+					<?php endforeach; ?>
+					</ul>
+					<?php else: ?>
+					<div class="text-center">
+						Brak użytkowników
+					</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$("a[rel='action-manage']").each(function(){
+	var hidden = $(this).parents().eq(2).find('.panel-body .hidden');
+
+	$(this).click(function(event){
+		event.preventDefault();
+		hidden.each(function(){
+			$(this).toggleClass('hidden');
+		});
+	});
+});
+</script>

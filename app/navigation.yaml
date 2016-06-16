@@ -1,0 +1,5 @@
+ - url:     index,index
+   label:   Strona główna
+
+ - url:     settings,index
+   label:   Ustawienia aplikacji

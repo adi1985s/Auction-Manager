@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="page-header">
+		<h1>Użytkownicy <small>Zarządzaj</small></h1>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8">
+			<table class="table table-striped table-bordered">
+				<tr>
+					<th class="text-center">#</th>
+					<th class="text-center">Nazwa użytkownika</th>
+					<th class="text-center">Nazwa firmy</th>
+					<th class="text-center">Ilość pieniędzy ($)</th>
+					<th class="text-center">Akcje</th>
+				</tr>
+
+				<?php foreach($users as $user): ?>
+				<tr>
+					<td><?php echo $user->id ?></td>
+					<td><?php echo $user->username ?></td>
+					<td>
+					<?php if($user->company): ?>
+						<?php echo $user->company ?>
+					<?php else: ?>
+						<div class="text-muted text-center">Brak</div>
+					<?php endif; ?>
+					</td>
+					<td><?php echo $user->cash ?></td>
+					<td class="text-center">
+						<a href="?controller=user&amp;action=remove&amp;id=<?php echo $user->id ?>">Usuń</a>
+					</td>
+				</tr>
+				<?php endforeach; ?>
+			</table>
+		</div>
+
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong>Informacje</strong>
+				</div>
+				<div class="panel-body">
+					Użytkowników: <?php echo count($users) ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
