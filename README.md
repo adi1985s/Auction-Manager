@@ -6,3 +6,4 @@ System zarządzania towarami oraz aukcjami w serwisie Allegro.
  * Masowe zmiany na aukcjach
  * Masowe usuwanie wybranych (lub wszystkich) aukcji
  * Szybka zmiana cennika
+ * Podmiana miniatury aukcji
