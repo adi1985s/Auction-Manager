@@ -15,42 +15,26 @@
 
 		<ul class="nav navbar-nav">
 			<li class="dropdown">
-				<a href="?controller=plane" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					Samoloty <span class="caret"></span>
+				<a href="?controller=commodity" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					Towary i usługi <span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu" role="menu">
-					<li class="dropdown-header" role="presentation">Samoloty</li>
-					<li><a href="?controller=plane">Zarządzaj samolotami</a></li>
-					<li><a href="?controller=plane&amp;action=add">Dodaj nowy</a></li>
+					<li><a href="?controller=commodity">Przeglądaj towary</a></li>
+					<li><a href="?controller=commodity&amp;action=add">Dodaj nowy towar</a></li>
 					<li class="divider"></li>
-					<li class="dropdown-header" role="presentation">Producenci</li>
-					<li><a href="?controller=brand">Zarządzaj producentami</a></li>
-					<li><a href="?controller=brand&amp;action=add">Dodaj nowego</a></li>
+					<li><a href="?controller=commodity&amp;action=search">Wyszukaj</a></li>
 				</ul>
 			</li>
 
 			<li class="dropdown">
-				<a href="?controller=user" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					Użytkownicy <span class="caret"></span>
+				<a href="?controller=analysis" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					Analiza <span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu" role="menu">
-					<li><a href="?controller=user">Zarządzaj wszystkimi</a></li>
-					<li><a href="?controller=user&amp;action=add">Dodaj nowego</a></li>
-				</ul>
-			</li>
-
-			<li class="dropdown">
-				<a href="?controller=plane" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					Lokalizacje <span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu" role="menu">
-					<li class="dropdown-header" role="presentation">Państwa</li>
-					<li><a href="?controller=country">Zarządzaj państwami</a></li>
-					<li><a href="?controller=country&amp;action=add">Dodaj nowe</a></li>
+					<li><a href="?controller=analysis&amp;action=find">Analiza towaru</a></li>
+					<li><a href="?controller=analysis&amp;action=delivery">Wystawianie z dostawy</a></li>
 					<li class="divider"></li>
-					<li class="dropdown-header" role="presentation">Miasta</li>
-					<li><a href="?controller=city&amp;">Zarządzaj miastami</a></li>
-					<li><a href="?controller=city&amp;action=add">Dodaj nowe</a></li>
+					<li><a href="?controller=commodity&amp;action=agenda">Kalendarz (pełna analiza)</a></li>
 				</ul>
 			</li>
 		</ul>
